@@ -16,14 +16,18 @@ Rails.application.configure do
   config.server_timing = true
 
   config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  user_name:            'jemskedjar@gmail.com', # Replace with your Gmail
-  password:             'Hakima14242024@',       # Replace with your Gmail password
-  authentication:       'plain',
-  enable_starttls_auto: true
-}
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com', # Or your email provider's SMTP server
+    port:                 587,
+    domain:               'yourdomain.com', # Replace with your app's domain
+    user_name:            ENV['SMTP_USERNAME'], # Set in your environment variables
+    password:             ENV['SMTP_PASSWORD'], # Set in your environment variables
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'gdg-backend.onrender.com' }
+  
 
   # Enable/disable Action Controller caching. By default Action Controller caching is disabled.
   # Run rails dev:cache to toggle Action Controller caching.
