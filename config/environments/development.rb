@@ -26,7 +26,7 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: 'gdg-backend.onrender.com' }
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
   
 
   # Enable/disable Action Controller caching. By default Action Controller caching is disabled.
