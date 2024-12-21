@@ -13,7 +13,29 @@ development:
   queue:
     adapter: postgresql
     encoding: unicode
-    database: queue_dev
+    database: queue_db
+    pool: 5
+    username: avnadmin
+    password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
+    host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
+    port: 20853
+    sslmode: require
+    sslrootcert: config/ssl/ca.pem
+  cache:
+    adapter: postgresql
+    encoding: unicode
+    database: cache_db
+    pool: 5
+    username: avnadmin
+    password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
+    host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
+    port: 20853
+    sslmode: require
+    sslrootcert: config/ssl/ca.pem
+  cable:
+    adapter: postgresql
+    encoding: unicode
+    database: test_cable_db
     pool: 5
     username: avnadmin
     password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
@@ -26,7 +48,7 @@ test:
   primary:
     adapter: postgresql
     encoding: unicode
-    database: your_test_database_name
+    database: test_defaultdb
     pool: 5
     username: avnadmin
     password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
@@ -37,7 +59,29 @@ test:
   queue:
     adapter: postgresql
     encoding: unicode
-    database: queue_test
+    database: test_queue_db
+    pool: 5
+    username: avnadmin
+    password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
+    host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
+    port: 20853
+    sslmode: require
+    sslrootcert: config/ssl/ca.pem
+  cache:
+    adapter: postgresql
+    encoding: unicode
+    database: test_cache_db
+    pool: 5
+    username: avnadmin
+    password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
+    host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
+    port: 20853
+    sslmode: require
+    sslrootcert: config/ssl/ca.pem
+  cable:
+    adapter: postgresql
+    encoding: unicode
+    database: test_cable_db
     pool: 5
     username: avnadmin
     password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
@@ -61,7 +105,7 @@ production:
   queue:
     adapter: postgresql
     encoding: unicode
-    database: queue_prod
+    database: prod_queue_db
     pool: 5
     username: avnadmin
     password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
@@ -69,15 +113,25 @@ production:
     port: 20853
     sslmode: require
     sslrootcert: config/ssl/ca.pem
-
-cable:
-  adapter: postgresql
-  encoding: unicode
-  database: defaultdb
-  pool: 5
-  username: avnadmin
-  password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
-  host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
-  port: 20853
-  sslmode: require
-  sslrootcert: config/ssl/ca.pem
+  cache:
+    adapter: postgresql
+    encoding: unicode
+    database: prod_cache_db
+    pool: 5
+    username: avnadmin
+    password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
+    host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
+    port: 20853
+    sslmode: require
+    sslrootcert: config/ssl/ca.pem
+  cable:
+    adapter: postgresql
+    encoding: unicode
+    database: test_cable_db
+    pool: 5
+    username: avnadmin
+    password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
+    host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
+    port: 20853
+    sslmode: require
+    sslrootcert: config/ssl/ca.pem
