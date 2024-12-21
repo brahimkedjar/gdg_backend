@@ -8,7 +8,7 @@ development:
   host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
   port: 20853
   sslmode: require
-  sslrootcert: 'path_to_ca_certificate.pem'  # Path to your CA certificate (optional if required)
+  sslrootcert: 'path_to_ca_certificate.pem'
 
 test:
   adapter: postgresql
@@ -26,6 +26,18 @@ production:
   adapter: postgresql
   encoding: unicode
   database: defaultdb
+  pool: 5
+  username: avnadmin
+  password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
+  host: pg-2ca3c248-jemskedjar-1459.f.aivencloud.com
+  port: 20853
+  sslmode: require
+  sslrootcert: 'path_to_ca_certificate.pem'
+
+cable:
+  adapter: postgresql
+  encoding: unicode
+  database: defaultdb  # You can use the same database as production, or a separate one if needed.
   pool: 5
   username: avnadmin
   password: 'AVNS_AFR9Ey4S0DZUP1Zi0Gd'
