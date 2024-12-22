@@ -19,7 +19,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com', # Or your email provider's SMTP server
     port:                 587,
-    domain:               'yourdomain.com', # Replace with your app's domain
+    domain:               'gdg-backend.onrender.com', # Replace with your app's domain
     user_name:            ENV['SMTP_USERNAME'], # Set in your environment variables
     password:             ENV['SMTP_PASSWORD'], # Set in your environment variables
     authentication:       'plain',
