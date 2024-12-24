@@ -11,7 +11,6 @@ class RegistrationsController < ApplicationController
         if @team.save
           puts "Team saved successfully: #{@team.inspect}"
   
-          # Loop through the members and associate each one with the team
           registration_params[:members].each do |member_params|
             puts "Creating member: #{member_params.inspect}"
             member = @team.members.create(
@@ -28,7 +27,6 @@ class RegistrationsController < ApplicationController
           render json: { errors: @team.errors.full_messages }, status: :unprocessable_entity
         end
       else
-        # Handling individual registration (no team)
         @individual = Individual.new(
           name: registration_params[:members][0][:name],
           email: registration_params[:members][0][:email],
@@ -53,7 +51,7 @@ class RegistrationsController < ApplicationController
         :leader_phone, 
         :idea_description, 
         :competence, 
-        :request_add_member, # Permit the new parameter
+        :request_add_member, 
         members: [:name, :email, :role, :competence]
       )
     end

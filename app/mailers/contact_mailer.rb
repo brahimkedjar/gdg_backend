@@ -7,7 +7,7 @@ class ContactMailer < ApplicationMailer
   
       mail(
         to: 'jemskedjar@gmail.com',
-        from: sender_email, # Use sender's email as the `from` address
+        from: sender_email,
         subject: 'New Contact Form Submission'
       )
     end
